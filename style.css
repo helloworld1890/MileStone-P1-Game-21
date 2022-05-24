@@ -1,0 +1,40 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #c7c3c3;
+    color: ghostwhite;
+    padding-bottom: 15px;
+}
+
+
+
+.nav li, a {
+    display: inline-block;
+    margin: 10px 20px 0 50px; 
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 5px;
+    text-decoration: none;
+    color: #1d0c0f;
+}
+
+body {
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.box {
+    display: flex;
+    justify-content: space-around;
+}
