@@ -32,9 +32,64 @@ body {
 h1 {
     text-align: center;
     margin-top: 2rem;
+    font-size: 50px;
 }
 
 .box {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 100px;
 }
+
+.dicePosition {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.dice, .dice2 {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 100px;
+}
+
+.score1, .player1, .score2, .player2 {
+    font-size: 5rem;
+}
+
+.score1, .score2 {
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.roll {
+    background-color: #1282E4;
+}
+
+.new-game {
+    background-color: #c7c3c3;
+}
+
+.end-game {
+    background-color: #ea7272;
+}
+
+.roll, .new-game, .end-game {
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
