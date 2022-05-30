@@ -90,12 +90,12 @@ button {
     background-color: #ea7272;
 }
 
-.roll, .new-game, .end-game {
+.roll, .new-game, .end-game, .hold {
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.roll {
+.roll, .hold {
     padding-right: 40px; 
     padding-left: 40px; 
 }
