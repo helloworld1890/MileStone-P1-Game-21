@@ -13,6 +13,16 @@ turnPlayer = 0;
 gamePlay = true;
 attempts = 0;
 
+//reset the results
+const reset = () => {
+    playerScore = 0;
+    attempts = 0;
+    document.querySelector(".score0").textContent = "0";
+    document.querySelector(".score1").textContent = "0";
+    dice.src = `./images/dice-1.png`;
+    diceTwo.src = `./images/dice-2.png`;
+}
+
 //Roll effect
 roll.addEventListener("click", () => {
   //Randomizing a number from 1 to 6
@@ -38,12 +48,7 @@ roll.addEventListener("click", () => {
 const nextPlayer = () => {
   turnPlayer === 0 ? (turnPlayer = 1) : (turnPlayer = 0);
   alert("Cheaters never prosper, you only get three rolls...");
-  playerScore = 0;
-  attempts = 0;
-  document.querySelector(".score0").textContent = "0";
-  document.querySelector(".score1").textContent = "0";
-  dice.src = `./images/dice-1.png`;
-  diceTwo.src = `./images/dice-2.png`;
+  reset();
 };
 
 
@@ -51,10 +56,8 @@ const nextPlayer = () => {
 //End your turn if you over shot the dices
 endTurn.addEventListener("click", () => {
   turnPlayer === 0 ? (turnPlayer = 1) : (turnPlayer = 0);
-  playerScore = 0;
-  attempts = 0;
-  document.querySelector(".score0").textContent = "0";
-  document.querySelector(".score1").textContent = "0";
-  dice.src = `./images/dice-1.png`;
-  diceTwo.src = `./images/dice-2.png`;
+  reset();
 });
+
+//Start new game 
+newGame.addEventListener("click", reset);
