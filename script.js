@@ -3,10 +3,10 @@ const diceTwo = document.querySelector("#diceImg2");
 const newGame = document.querySelector(".new-game");
 const roll = document.querySelector(".roll");
 const endTurn = document.querySelector(".end-turn");
-const hold = document.querySelector(".hold");
+const holdButton = document.querySelector(".hold");
 
 // const playerTwo = document.querySelector(`.score2`);
-let score, playerScore, activePlayer, gamePlay, attempts;
+let score, playerScore, gamePlay, attempts, turnPlayer;
 score = [0, 0];
 playerScore = 0;
 turnPlayer = 0;
@@ -40,6 +40,7 @@ roll.addEventListener("click", () => {
     let player = document.querySelector(`.score${turnPlayer}`);
     player.textContent = playerScore;
   } else if (attempts === 3) {
+    alert("Cheaters never prosper, you only get three rolls...");
     nextPlayer();
   }
 });
@@ -47,7 +48,6 @@ roll.addEventListener("click", () => {
 //function that calls on the player to play, beware to not over roll the dices
 const nextPlayer = () => {
   turnPlayer === 0 ? (turnPlayer = 1) : (turnPlayer = 0);
-  alert("Cheaters never prosper, you only get three rolls...");
   reset();
 };
 
@@ -68,3 +68,19 @@ newGame.addEventListener("click", () => {
 });
 
 //Building the Hold button 
+holdButton.addEventListener("click", () => {
+    if (gamePlay) {
+        turnPlayer === 0 ? (turnPlayer = 1) : (turnPlayer = 0);
+        attempts = 0;
+        playerScore = 0;
+        dice.src = `./images/dice-1.png`;
+        diceTwo.src = `./images/dice-2.png`;
+        score[turnPlayer] += playerScore;
+        document.querySelector(`.score${turnPlayer}`).textContent = score[turnPlayer];
+
+    }
+    // else {
+    //     nextPlayer();
+    // }
+});
+
