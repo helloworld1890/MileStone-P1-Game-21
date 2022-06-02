@@ -60,4 +60,11 @@ endTurn.addEventListener("click", () => {
 });
 
 //Start new game 
-newGame.addEventListener("click", reset);
+newGame.addEventListener("click", () => {
+    if (turnPlayer === 1) {
+        turnPlayer = 0
+    }
+    reset()
+});
+
+//Building the Hold button 
