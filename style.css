@@ -57,11 +57,11 @@ h1 {
     font-size: 100px;
 }
 
-.score1, .player1, .score2, .player2 {
+.score1, .player1, .score0, .player2 {
     font-size: 5rem;
 }
 
-.score1, .score2 {
+.score0, .score1 {
     text-align: center;
 }
 
