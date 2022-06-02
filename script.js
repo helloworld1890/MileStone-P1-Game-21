@@ -2,7 +2,7 @@ const dice = document.querySelector("#diceImg");
 const diceTwo = document.querySelector("#diceImg2");
 const newGame = document.querySelector(".new-game");
 const roll = document.querySelector(".roll");
-const endGame = document.querySelector(".end-game");
+const endTurn = document.querySelector(".end-turn");
 const hold = document.querySelector(".hold");
 
 // const playerTwo = document.querySelector(`.score2`);
@@ -31,16 +31,30 @@ roll.addEventListener("click", () => {
     player.textContent = playerScore;
   } else if (attempts === 3) {
     nextPlayer();
-    attempts = 0;
   }
 });
 
+//function that calls on the player to play, beware to not over roll the dices
 const nextPlayer = () => {
   turnPlayer === 0 ? (turnPlayer = 1) : (turnPlayer = 0);
   alert("Cheaters never prosper, you only get three rolls...");
   playerScore = 0;
+  attempts = 0;
   document.querySelector(".score0").textContent = "0";
   document.querySelector(".score1").textContent = "0";
   dice.src = `./images/dice-1.png`;
   diceTwo.src = `./images/dice-2.png`;
 };
+
+
+
+//End your turn if you over shot the dices
+endTurn.addEventListener("click", () => {
+  turnPlayer === 0 ? (turnPlayer = 1) : (turnPlayer = 0);
+  playerScore = 0;
+  attempts = 0;
+  document.querySelector(".score0").textContent = "0";
+  document.querySelector(".score1").textContent = "0";
+  dice.src = `./images/dice-1.png`;
+  diceTwo.src = `./images/dice-2.png`;
+});

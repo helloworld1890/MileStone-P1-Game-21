@@ -86,11 +86,11 @@ button {
     background-color: #c7c3c3;
 }
 
-.end-game {
+.end-turn {
     background-color: #ea7272;
 }
 
-.roll, .new-game, .end-game, .hold {
+.roll, .new-game, .end-turn, .hold {
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
