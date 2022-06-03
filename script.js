@@ -15,12 +15,15 @@ attempts = 0;
 
 //reset the results
 const reset = () => {
+    score = [0, 0]
     playerScore = 0;
     attempts = 0;
     document.querySelector(".score0").textContent = "0";
     document.querySelector(".score1").textContent = "0";
     dice.src = `./images/dice-1.png`;
     diceTwo.src = `./images/dice-2.png`;
+    document.querySelector(`.scoreBoard-0`).textContent = "0";
+    document.querySelector(`.scoreBoard-1`).textContent = "0";
 }
 
 //Roll effect
@@ -70,14 +73,18 @@ newGame.addEventListener("click", () => {
 //Building the Hold button 
 holdButton.addEventListener("click", () => {
     if (gamePlay) {
-        turnPlayer === 0 ? (turnPlayer = 1) : (turnPlayer = 0);
-        attempts = 0;
-        playerScore = 0;
-        dice.src = `./images/dice-1.png`;
-        diceTwo.src = `./images/dice-2.png`;
         score[turnPlayer] += playerScore;
-        document.querySelector(`.score${turnPlayer}`).textContent = score[turnPlayer];
+        document.querySelector(`.scoreBoard-${turnPlayer}`).textContent = score[turnPlayer];
 
+        //winning condition
+        if (score[turnPlayer] === 21) {
+            alert("You have won the game of 21!!! congrats");
+            reset();
+            gamePlay = false;
+        } else if (score[turnPlayer] > 21) {
+            score = [0, 0];
+            nextPlayer();
+        } 
     }
     // else {
     //     nextPlayer();
