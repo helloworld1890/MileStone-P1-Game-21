@@ -86,8 +86,7 @@ holdButton.addEventListener("click", () => {
             nextPlayer();
         } 
     }
-    // else {
-    //     nextPlayer();
-    // }
 });
+
+
 
