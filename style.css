@@ -54,6 +54,7 @@ h1 {
 #diceImg, #diceImg2 {
 display: block;
 height: 10rem;
+margin-bottom: 10px;
 }
 
 .dice, .dice2 {
@@ -63,6 +64,10 @@ height: 10rem;
     margin-bottom: 0;
 }
 
+#player1, #player2 {
+    padding:50px;
+    border-radius: 20px;
+}
 
 .score1, .player1, .score0, .player2, .scoreBoard-0, .scoreBoard-1 {
     font-size: 2rem;
@@ -71,6 +76,8 @@ height: 10rem;
 .score0, .score1, .scoreBoard-0 , .scoreBoard-1 {
     text-align: center;
 }
+
+
 
 .button {
     display: flex;
@@ -84,7 +91,14 @@ button {
     margin-left: 10px;
     padding: 20px;
     border-radius: 20px;
+    transition: 0.3s;
 }
+
+button:hover {
+    opacity: 2;
+    background-color: #e3e1e1;
+    font-weight: 600px;
+  }
 
 .roll {
     background-color: #1282E4;
