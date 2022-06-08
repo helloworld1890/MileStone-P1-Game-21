@@ -31,12 +31,19 @@ body {
 
 .rules {
     background-color: #e7aaaa;
-    display: flex;
+    /* display: flex;
     text-align: center;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 10px 500px;
+    margin: 10px 500px; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
     border-radius: 20px;
 }
 
