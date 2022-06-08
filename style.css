@@ -29,6 +29,17 @@ body {
     background-color: #f8f8f8;
 }
 
+.rules {
+    background-color: #e7aaaa;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 500px;
+    border-radius: 20px;
+}
+
 h1 {
     text-align: center;
     margin-top: 2rem;

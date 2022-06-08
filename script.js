@@ -6,16 +6,34 @@ const endTurn = document.querySelector(".end-turn");
 const holdButton = document.querySelector(".hold");
 const player1 = document.getElementById("player1");
 const player2 = document.getElementById("player2");
+const gameRules = document.querySelector(".showRules");
+const rules = document.querySelector(".rules");
 //initial active player
 player1.style.backgroundColor = "#E3E1E1";
 
+//initial rules hidden
+rules.style.display = "none"
+
 // const playerTwo = document.querySelector(`.score2`);
-let score, playerScore, gamePlay, attempts, turnPlayer;
+let score, playerScore, gamePlay, attempts, turnPlayer, showRules;
 score = [0, 0];
 playerScore = 0;
 turnPlayer = 0;
 gamePlay = true;
 attempts = 0;
+showRules = true;
+
+//showing the rules to the game
+gameRules.addEventListener("click", () => {
+  if (showRules === true) {
+    showRules = false;
+    rules.style.display = "block";
+  } else if (showRules === false) {
+    showRules = true;
+    rules.style.display = "none";
+  }
+})
+
 
 //reset the results
 const reset = () => {
@@ -96,7 +114,6 @@ holdButton.addEventListener("click", () => {
     //winning condition
     if (score[turnPlayer] === 21) {
       alert("You have won the game of 21!!! congrats");
-      gamePlay = false;
       turnPlayer = 0;
       reset();
     } else if (score[turnPlayer] >= 22) {
